@@ -1,0 +1,5 @@
+Shell01
+ex02 find . -type f -name "*.sh" -exec basename -s ".sh" {} \;
+ex03 find . -type f -o -type d | wc -l
+ex04 ifconfig -a | grep ^eth | awk '{print $5}'
+ex06 ls -l | sed "2d"
