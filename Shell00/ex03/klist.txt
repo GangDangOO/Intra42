@@ -1,2 +1,26 @@
-    Name               Cache name                                 Expires
-* saseo@42SEOUL.KR   API:0DFD1CE2-3ED2-4981-863C-8296BDFFA274   Jul  5 16:05:59 2020
+Credentials cache: API:8C131CFE-93A9-41B2-BA3C-4776DB4F8485
+        Principal: saseo@42SEOUL.KR
+    Cache version: 0
+
+Server: krbtgt/42SEOUL.KR@42SEOUL.KR
+Client: saseo@42SEOUL.KR
+Ticket etype: aes256-cts-hmac-sha1-96, kvno 1
+Ticket length: 338
+Auth time:  Jul  6 13:30:08 2020
+End time:   Jul  6 23:30:08 2020
+Renew till: Jul 13 13:30:08 2020
+Ticket flags: enc-pa-rep, pre-authent, initial, renewable, proxiable, forwardable
+Addresses: addressless
+
+Server: HTTP/student-storage.42seoul.kr@42SEOUL.KR
+Client: saseo@42SEOUL.KR
+Ticket etype: aes256-cts-hmac-sha1-96, kvno 2
+Ticket length: 352
+Auth time:  Jul  6 13:30:08 2020
+Start time: Jul  6 13:30:11 2020
+End time:   Jul  6 23:30:08 2020
+Ticket flags: enc-pa-rep, transited-policy-checked, pre-authent, proxiable, forwardable
+Addresses: addressless
+
+
+
