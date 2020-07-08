@@ -1,52 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/08 16:38:55 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/08 22:15:03 by saseo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdbool.h>
+#include <stdio.h>
 
-void ft_print_comb(void);
-
-int main()
+void	ft_write(int[] arr)
 {
-	ft_print_comb();
+	printf(arr);
 }
 
-void ft_print_comb(void)
+void	ft_print_comb(void)
 {
-	char a,b,c;
-	int arr1[1000], arr2[1000], arr3[1000];
-	int loop = 0;
-	for(int i=0; i<10; i++)
+	int i[3];
+	char *comma;
+
+	i[0] = 0;
+	i[1] = 1;
+	i[2] = 1;
+	comma = ", ";
+	while (1)
 	{
-		for(int j=0; j<10; j++)
+		i[2] += 1;
+		if (i[2] == 10)
 		{
-			for(int k=0; k<10; k++)
+			i[1] += 1;
+			if (i[1] == 9)
 			{
-				if(i != j && i != k && j != k)
-				{
-					int clash = 0;
-					for(int l=0; l<=loop; l++)
-					{
-						clash = 0;
-						if(i == arr1[l] || i == arr2[l] || i == arr3[l]) clash++;
-						if(j == arr1[l] || j == arr2[l] || j == arr3[l]) clash++;
-						if(k == arr1[l] || k == arr2[l] || k == arr3[l]) clash++;
-						if(clash == 3) break;
-					}
-					if(clash == 3)
-					{
-						arr1[loop] = i;
-						arr2[loop] = j;
-						arr3[loop] = k;
-						loop++;
-						a = (char)i+48;
-						b = (char)j+48;
-						c = (char)k+48;
-						write(1, &a, 1);
-						write(1, &b, 1);
-						write(1, &c, 1);
-						char *com = ", ";
-						write(1, &*com, 2);
-					}
-				}
+				i[0] += 1;
+				i[1] = i[0] + 1;
 			}
+			i[2] = i[1] + 1;
 		}
+		ft_write(i);
+		if (i[0] == 7 && i[1] == 8 && i[2] == 9)
+		{
+			break ;
+		}
+		write(1, &*comma, 2);
 	}
+}
+
+int	main()
+{
+	ft_print_comb();
 }

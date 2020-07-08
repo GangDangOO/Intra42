@@ -1,18 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/08 16:11:50 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/08 16:14:22 by saseo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void);
-
-int main()
+void	ft_print_reverse_alphabet(void)
 {
-	ft_print_reverse_alphabet();
-}
+	int i;
 
-void ft_print_reverse_alphabet(void)
-{
-	char c;
-	for(int i=122; i>96; i--)
+	i = 122;
+	while (i > 96)
 	{
-		c = (char)i;
-		write(1, &c, 1);
+		write(1, &i, 1);
+		i--;
 	}
 }

@@ -1,18 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/08 15:07:10 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/08 16:10:42 by saseo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_alphabet(void);
-
-int main()
+void	ft_print_alphabet(void)
 {
-	ft_print_alphabet();
-}
+	int i;
 
-void ft_print_alphabet(void)
-{
-	char c;
-	for(int i=97; i< 123; i++)
+	i = 97;
+	while (i < 123)
 	{
-		c = (char)i;
-		write(1, &c, 1);
+		write(1, &i, 1);
+		i++;
 	}
 }

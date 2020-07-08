@@ -1,8 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/08 16:20:24 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/08 16:33:22 by saseo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_numbers(void);
-
-void ft_print_numbers(void)
+void	ft_print_numbers(void)
 {
+	int i;
 
+	i = 0;
+	while (i < 10)
+	{
+		write(1, &i, 1);
+		i++;
+	}
 }
