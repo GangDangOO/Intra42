@@ -6,42 +6,47 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 16:38:55 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/08 22:15:03 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/09 17:39:21 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_write(int[] arr)
+void	ft_print(int arr[])
 {
-	printf(arr);
+	int i;
+	char c;
+
+	i = 0;
+	while (i < 3)
+	{
+		c = arr[i] + 48;
+		write(1, &c, 1);
+		i++;
+	}
 }
 
-void	ft_print_comb(void)
+void	ft_while(int arr[], int count)
 {
-	int i[3];
 	char *comma;
 
-	i[0] = 0;
-	i[1] = 1;
-	i[2] = 1;
 	comma = ", ";
 	while (1)
 	{
-		i[2] += 1;
-		if (i[2] == 10)
+		arr[2] += 1;
+		if (arr[2] == 10)
 		{
-			i[1] += 1;
-			if (i[1] == 9)
+			arr[1] += 1;
+			if (arr[1] == 9)
 			{
-				i[0] += 1;
-				i[1] = i[0] + 1;
+				arr[0] += 1;
+				arr[1] = arr[0] + 1;
 			}
-			i[2] = i[1] + 1;
+			arr[2] = arr[1] + 1;
 		}
-		ft_write(i);
-		if (i[0] == 7 && i[1] == 8 && i[2] == 9)
+		ft_print(arr);
+		if (arr[0] == 7 && arr[1] == 8 && arr[2] == 9)
 		{
 			break ;
 		}
@@ -49,7 +54,17 @@ void	ft_print_comb(void)
 	}
 }
 
-int	main()
+void	ft_print_comb(void)
+{
+	int i[3];
+
+	i[0] = 0;
+	i[1] = 1;
+	i[2] = 1;
+	ft_while(i, 3);
+}
+
+int	main(void)
 {
 	ft_print_comb();
 }
