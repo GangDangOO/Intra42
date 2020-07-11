@@ -6,17 +6,11 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 16:38:55 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/08 22:15:03 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/11 20:32:16 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
-
-void	ft_write(int[] arr)
-{
-	printf(arr);
-}
 
 void	ft_print_comb(void)
 {
