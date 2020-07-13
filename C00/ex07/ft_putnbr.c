@@ -1,49 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/13 18:21:34 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/13 20:27:42 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/13 21:58:03 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/13 22:41:29 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_output(int a, int b, char c[])
+void	ft_first(int nb)
 {
-	int	i;
 
-	if (a == 3)
-	{
-		write(1, &c[0], 1);
-		write(1, &c[1], 1);
-		write(1, &c[2], 1);
-		if (!(c[0] == '7' && c[1] == '8' && c[2] == '9'))
-		{
-			write(1, ", ", 2);
-		}
-		return ;
-	}
-	i = b;
-	while (i < 10)
-	{
-		c[a] = i + 48;
-		ft_output(a + 1, i + 1, c);
-		i++;
-	}
 }
 
-void	ft_print_comb(void)
+void	ft_putnbr(int nb)
 {
-	char c[3];
-
-	ft_output(0, 0, c);
+	if (nb < 10) return;
+	ft_putnbr(nb / 10);
+	char c;
+	nb %= 10;
+	c = nb + 48;
+	write(1, &c, 1);
 }
 
 int		main(void)
 {
-	ft_print_comb();
+	ft_putnbr(43424545);
 }
