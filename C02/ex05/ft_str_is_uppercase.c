@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 15:07:10 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 19:50:16 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/15 22:24:20 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/15 22:28:40 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+int		ft_str_is_uppercase(char *str)
 {
 	int i;
 
-	i = 97;
-	while (i < 123)
+	i = 0;
+	if (str[i] == '\0')
 	{
-		write(1, &i, 1);
+		return (1);
+	}
+	while (str[i] != '\0')
+	{
+		if (!(str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			return (0);
+		}
 		i++;
 	}
+	return (1);
 }

@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 15:07:10 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 19:50:16 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/15 22:31:17 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/15 22:38:14 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+int		ft_str_is_printable(char *str)
 {
 	int i;
 
-	i = 97;
-	while (i < 123)
+	i = 0;
+	if (str[i] == '\0')
 	{
-		write(1, &i, 1);
-		i++;
+		return 1;
 	}
+	while (str[i] != '\0')
+	{
+		if (!(str[i] >= 41 && str[i] <= 176))
+		{
+			return (0);
+		}
+	}
+	return (1);
 }

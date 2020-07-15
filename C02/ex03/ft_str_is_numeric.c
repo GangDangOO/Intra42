@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 15:07:10 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 19:50:16 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/15 21:54:12 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/15 22:00:21 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+int		ft_str_is_numeric(char *str)
 {
 	int i;
+	int answer;
 
-	i = 97;
-	while (i < 123)
+	i = 0;
+	if (str[i] == '\0')
 	{
-		write(1, &i, 1);
+		return (1);
+	}
+	while (str[i] != '\0')
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			answer = 1;
+		}
+		else
+		{
+			answer = 0;
+			break ;
+		}
 		i++;
 	}
+	return (answer);
 }

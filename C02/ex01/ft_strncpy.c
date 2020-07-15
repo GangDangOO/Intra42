@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 15:07:10 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 19:50:16 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/15 20:24:37 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/15 21:29:05 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int i;
+	int j;
 
-	i = 97;
-	while (i < 123)
+	j = n;
+	i = 0;
+	while (i < j)
 	{
-		write(1, &i, 1);
+		dest[i] = src[i];
 		i++;
 	}
+	return (dest);
 }

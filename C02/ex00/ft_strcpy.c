@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 15:07:10 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 19:50:16 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/15 19:53:45 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/15 21:22:51 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
 
-	i = 97;
-	while (i < 123)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		write(1, &i, 1);
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = src[i];
+	return (dest);
 }
