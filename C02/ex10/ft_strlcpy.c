@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/13 18:21:34 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/18 15:06:46 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/18 17:12:14 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/18 18:01:32 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_output(int a, int b, char c[])
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	i;
+	unsigned int i;
 
-	if (a == 3)
+	i = 0;
+	if (size == 0)
 	{
-		write(1, &c[0], 1);
-		write(1, &c[1], 1);
-		write(1, &c[2], 1);
-		if (!(c[0] == '7' && c[1] == '8' && c[2] == '9'))
-		{
-			write(1, ", ", 2);
-		}
-		return ;
+		while (src[i] != '\0')
+			i++;
+		return (i);
 	}
-	i = b;
-	while (i < 10)
+	while (src[i] != '\0')
 	{
-		c[a] = i + 48;
-		ft_output(a + 1, i + 1, c);
+		dest[i] = src[i];
 		i++;
 	}
-}
-
-void	ft_print_comb(void)
-{
-	char c[3];
-
-	ft_output(0, 0, c);
+	dest[size - 1] = '\0';
+	return (i);
 }

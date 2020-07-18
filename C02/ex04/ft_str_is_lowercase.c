@@ -6,11 +6,9 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 22:17:22 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 22:29:25 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/18 13:16:09 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int		ft_str_is_lowercase(char *str)
 {

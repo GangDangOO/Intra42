@@ -6,11 +6,9 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 21:29:38 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 21:53:40 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/18 13:14:12 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int		ft_str_is_alpha(char *str)
 {

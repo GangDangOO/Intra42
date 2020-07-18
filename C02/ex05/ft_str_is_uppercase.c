@@ -6,11 +6,9 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 22:24:20 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 22:28:40 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/18 13:17:02 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int		ft_str_is_uppercase(char *str)
 {
