@@ -6,7 +6,7 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 16:20:24 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 19:51:03 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/18 12:01:50 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_print_numbers(void)
 {
-	int i;
+	char	c;
+	int		i;
 
 	i = 0;
 	while (i < 10)
 	{
-		write(1, &i, 1);
+		c = i + 48;
+		write(1, &c, 1);
 		i++;
 	}
 }

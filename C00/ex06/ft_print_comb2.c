@@ -6,7 +6,7 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 20:16:10 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 22:47:51 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/18 12:11:27 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_write(char a[2], char b[2])
 	}
 }
 
-void	ft_while(int n, char a[2], char b[2])
+void	ft_while(char a[2], char b[2])
 {
 	while (!(b[0] == '9' && b[1] == '8'))
 	{
@@ -66,10 +66,5 @@ void	ft_print_comb2(void)
 	a[1] = 48;
 	b[0] = 48;
 	b[1] = 48;
-	ft_while(0, a, b);
-}
-
-int		main(void)
-{
-	ft_print_comb2();
+	ft_while(a, b);
 }

@@ -6,11 +6,9 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 14:55:40 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/15 14:59:06 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/18 12:55:13 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {

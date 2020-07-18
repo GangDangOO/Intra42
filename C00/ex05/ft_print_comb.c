@@ -6,7 +6,7 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 18:21:34 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/13 20:27:42 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/18 12:09:09 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,4 @@ void	ft_print_comb(void)
 	char c[3];
 
 	ft_output(0, 0, c);
-}
-
-int		main(void)
-{
-	ft_print_comb();
 }
