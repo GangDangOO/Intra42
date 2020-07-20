@@ -1,42 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/18 17:12:14 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/20 17:15:57 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/20 15:35:49 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/20 16:37:03 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+char	*ft_check_str(char *str, char *to_find)
 {
-	unsigned int i;
+	int i;
+	int j;
 
 	i = 0;
 	while (str[i])
+	{
+		if (str[i] == to_find[0])
+		{
+			j = 0;
+			while (to_find[j])
+			{
+				if (str[i + j] == to_find[j])
+					j++;
+				else
+					break ;
+				if (to_find[j] == '\0')
+					return (&str[i]);
+			}
+		}
 		i++;
-	return (i);
+	}
+	return (0);
 }
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int i;
+	char *answer;
 
-	i = 0;
-	if (size == 0)
+	if (to_find[0] == '\0')
 	{
-		while (src[i])
-			i++;
-		return (i);
+		answer = &str[0];
+		return (answer);
 	}
-	while (i < size)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[size - 1] = '\0';
-	i = ft_strlen(src);
-	return (i);
+	answer = ft_check_str(str, to_find);
+	return (answer);
 }

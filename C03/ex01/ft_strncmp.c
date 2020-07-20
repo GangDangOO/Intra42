@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/18 17:12:14 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/20 17:15:57 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/20 14:48:04 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/20 15:09:09 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i;
 
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int i;
-
-	i = 0;
-	if (size == 0)
+	while (i < n)
 	{
-		while (src[i])
-			i++;
-		return (i);
-	}
-	while (i < size)
-	{
-		dest[i] = src[i];
+		if (s1[i] != s2[i])
+		{
+			if (s1[i] > s2[i])
+				return (1);
+			else
+				return (-1);
+		}
 		i++;
 	}
-	dest[size - 1] = '\0';
-	i = ft_strlen(src);
-	return (i);
+	return (0);
 }

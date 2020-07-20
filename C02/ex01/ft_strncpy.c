@@ -6,20 +6,20 @@
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 20:24:37 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/18 13:13:08 by saseo            ###   ########.fr       */
+/*   Updated: 2020/07/20 17:16:50 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
-	int j;
+	unsigned int i;
 
-	j = n;
 	i = 0;
-	while (i < j)
+	while (i < n)
 	{
 		dest[i] = src[i];
+		if (src[i] == '\0')
+			break;
 		i++;
 	}
 	return (dest);

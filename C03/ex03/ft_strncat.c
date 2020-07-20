@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saseo <saseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/18 17:12:14 by saseo             #+#    #+#             */
-/*   Updated: 2020/07/20 17:15:57 by saseo            ###   ########.fr       */
+/*   Created: 2020/07/20 15:13:02 by saseo             #+#    #+#             */
+/*   Updated: 2020/07/20 15:16:53 by saseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
 	while (str[i])
@@ -20,23 +20,18 @@ unsigned int	ft_strlen(char *str)
 	return (i);
 }
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int i;
+	int				dest_tail;
+	unsigned int	i;
 
+	dest_tail = ft_strlen(dest);
 	i = 0;
-	if (size == 0)
+	while (i < nb)
 	{
-		while (src[i])
-			i++;
-		return (i);
-	}
-	while (i < size)
-	{
-		dest[i] = src[i];
+		dest[dest_tail + i] = src[i];
 		i++;
 	}
-	dest[size - 1] = '\0';
-	i = ft_strlen(src);
-	return (i);
+	dest[dest_tail + i] = '\0';
+	return (dest);
 }
