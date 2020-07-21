@@ -5,7 +5,7 @@
 	#include <stdlib.h>
 
 
-	int		ft_atoi(char *str);
+	;
 
 	void printmsg(const char *msg, ...)
 	{
@@ -35,9 +35,14 @@
 	int main()
 	{
 		
-	printf("%d", ft_atoi("\t\n\v\f\r +256"));
+	printf("%d ", ft_atoi_base("42", "0123456789"));
+	printf("%d ", ft_atoi_base("   42", "0123456789"));
+	printf("%d ", ft_atoi_base("  +--++-rcrdmddd+-abc", "mrdoc"));
+	printf("%d ", ft_atoi_base("-10000000000000000000000000000000", "01"));
+	printf("%d ", ft_atoi_base("8888888888888888888888888888888", "a8"));
+	printf("%d ", ft_atoi_base("one", "e"));
+	printf("%d ", ft_atoi_base("blank", ""));
 	printf("\n");
-	printf("%d", ft_atoi("256a99999"));
 	}
 
 	
